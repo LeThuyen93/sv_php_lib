@@ -9,7 +9,7 @@
   },
   "require": {
     "mobiletech/php-lib": "dev-develop",
-    "igsem/phalcon-swagger": "dev-master"
+    "igsem/phalcon-swagger": "^0.0.2"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
