@@ -1,0 +1,32 @@
+{
+  "name": "sieuviet/php-lib",
+  "description": "A common php libraries",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "PHPLib\\Cache\\": "src/PHPLib/Cache/",
+      "PHPLib\\Logging\\": "src/PHPLib/Logging/",
+      "PHPLib\\Network\\": "src/PHPLib/Network/"
+    }
+  },
+  "require": {
+    "mobiletech/php-lib": "dev-develop"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "phalcon/incubator": "^3"
+  },
+  "version": "1.0.0",
+  "minimum-stability": "dev",
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true,
+    "secure-http": false
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "http://git.mobiletech.vn/MobileTech/php-lib.git"
+    }
+  ]
+}
