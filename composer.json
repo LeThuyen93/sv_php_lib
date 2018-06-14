@@ -10,7 +10,8 @@
   "require": {
     "mobiletech/php-lib": "dev-develop",
     "igsem/phalcon-swagger": "^0.0.2",
-    "firebase/php-jwt": "^5.0"
+    "firebase/php-jwt": "^5.0",
+    "phalcon/incubator": "^3.4"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
