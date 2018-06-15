@@ -5,6 +5,7 @@ namespace CodeBase;
 use Firebase\JWT\JWT;
 use Firebase\JWT\SignatureInvalidException;
 use Phalcon\Mvc\Controller as PhController;
+use PHPLib\Logging\Logger;
 use Swagger\Annotations as SWG;
 
 /**
@@ -126,6 +127,8 @@ class Controller extends PhController
         $this->response->setJsonContent($response);
 
         $this->response->send();
+        $start_time = $this->getStartTime();
+        Logger::apiFinish($start_time);
         exit;
     }
 
@@ -143,6 +146,7 @@ class Controller extends PhController
 
         $this->response->setJsonContent($response);
         $this->response->send();
+        Logger::error($message);
         exit();
     }
 
@@ -157,6 +161,7 @@ class Controller extends PhController
         $this->response->setStatusCode($code);
         $this->response->setContent($message);
         $this->response->send();
+        Logger::warning($message, $this->getStartTime());
         exit();
     }
 
@@ -176,9 +181,11 @@ class Controller extends PhController
 
         if ($this->config->cors->validation) {
             if (!in_array($origin, (array)$this->config->cors->validOrigins)) {
+                $message = "[CORS] Invalid Origin: `$origin`. Contact your administrator.";
                 $this->response->setStatusCode(CommonConstant::FORBIDDEN);
-                $this->response->setContent("[CORS] Invalid Origin: `$origin`. Contact your administrator.");
+                $this->response->setContent($message);
                 $this->response->send();
+                Logger::warning($message, $this->getStartTime());
                 exit();
             }
 
