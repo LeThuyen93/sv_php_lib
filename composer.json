@@ -8,7 +8,7 @@
     }
   },
   "require": {
-    "mobiletech/php-lib": "dev-develop",
+    "mobiletech/php-lib": "^1.0",
     "igsem/phalcon-swagger": "^0.0.2",
     "firebase/php-jwt": "^5.0",
     "phalcon/incubator": "^3.4"
@@ -27,7 +27,8 @@
   "repositories": [
     {
       "type": "git",
-      "url": "http://git.mobiletech.vn/MobileTech/php-lib.git"
+      "url": "http://git.mobiletech.vn/MobileTech/php-lib.git",
+      "reference": "master"
     }
   ]
 }
